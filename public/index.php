@@ -5,13 +5,10 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 'homepage';
 <?php include ROOT_PATH . 'public/template-parts/header.php'; ?>
 <div class="container mt-5">
   <div class="row">
-    <div class="col-lg-9">
+    <div class="col">
       <div class="main">
       <?php include "pages/$page.php"; ?>
       </div>
-    </div>
-    <div class="col-lg-3 big-screen">
-      <?php include ROOT_PATH . 'public/template-parts/sidebar.php'; ?>
     </div>
   </div>
 

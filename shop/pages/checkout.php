@@ -11,6 +11,8 @@
 ?>
 
 <?php
+
+
   global $alertMsg;
   $error = false;
 

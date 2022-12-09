@@ -22,10 +22,11 @@ global $loggedInUser;
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="<?php echo ROOT_URL; ?>index.php"><?php echo SITE_NAME; ?></a>
 
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+    
+      <a class="navbar-link" href="<?php echo ROOT_URL; ?>index.php"><img src="../images/logo.png"></a>
       <a class="cart-smartphone nav-link btn text-light" href="<?php echo ROOT_URL; ?>shop?page=cart">
         <i class="fas fa-shopping-cart"></i>
         <span class="badge badge-primary badge-pill js-totCartItems"></span>
@@ -111,4 +112,4 @@ global $loggedInUser;
 
       </div>
     </div>
-  </nav>
+  </nav> 
