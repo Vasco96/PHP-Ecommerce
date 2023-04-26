@@ -28,18 +28,26 @@ if (isset($_POST['login'])) {
 }
 ?>
 
-<h1>Login</h1>
+<div class="row">
+  <div class="columnAccediAccedi"><a >ACCEDI</a></div>
+  <div class="columnRegistratiAccedi"><a href="<?php echo ROOT_URL; ?>auth?page=register">REGISTRATI</a></div>
+</div>
+<br>
 
-<form method="post" class="mb-4">
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input name="email" id="email" type="text" class="form-control" value="<?php echo $email; ?>">
-  </div>
-  <div class="form-group">
-    <label for="name">Password</label>
-    <input name="password" id="password" type="password" class="form-control" value="<?php echo $password; ?>">
-  </div>
-  <input class="btn btn-primary right" type="submit" value="login" name="login">
-  <a class="underline" href="<?php echo ROOT_URL; ?>auth?page=register">Non hai un account? Registrati</a>
+    <form method="post" class="form">
+        <div class="inputfield">
+          <label>EMAIL:</label>
+          <input name="email" id="email" type="text" class="input" value="<?php echo $email; ?>">
+       </div>  
+       <div class="inputfield">
+          <label>PASSWORD:</label>
+          <input name="password" id="password" type="password" class="input" value="<?php echo $password; ?>">
+       </div>  
+       <a class="forget_password" href="#">Password dimenticata?</a>
+       
+      <div class="inputfield">
+        <br>
+        <input type="submit" value="Accedi" class="btn" name="login">
+      </div>
 </form>
-
+</div>	

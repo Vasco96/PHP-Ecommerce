@@ -5,7 +5,7 @@ $cognome = '';
 $email = '';
 $password = '';
 $confirm_password = '';
-$street = '';
+$nomeattivita = '';
 $city = '';
 $cap = '';
 
@@ -21,11 +21,11 @@ if (isset($_POST['register'])) {
   $password = esc($_POST['password']);
   $confirm_password = esc($_POST['confirm_password']);
 
-  $street = esc($_POST['street']);
+  $nomeattivita = esc($_POST['nome_attività']);
   $city = esc($_POST['city']);
   $cap = esc($_POST['cap']);
 
-  if ($nome != '' AND $cognome != '' AND $email != '' AND $password != '' AND $confirm_password != '' AND $street != '' AND $city != '' AND $cap != '' ) {
+  if ($nome != '' AND $cognome != '' AND $email != '' AND $password != '' AND $confirm_password != '' AND $nomeattivita != '' AND $city != '' AND $cap != '' ) {
 
     $userMgr = new UserManager();
 
@@ -52,7 +52,7 @@ if (isset($_POST['register'])) {
     if (!$errors ) {
       $userId = $userMgr->register($nome, $cognome, $email, $password);
       if ($userId > 0){
-        $userMgr->createAddress($userId, $street, $city, $cap);
+        $userMgr->createAddress($userId, $nomeattivita, $city, $cap);
         echo "<script>location.href='".ROOT_URL."auth?page=login&msg=registered';</script>";
         exit;
       } else {
@@ -65,52 +65,109 @@ if (isset($_POST['register'])) {
 }
 ?>
 
-<a class="underline " href="<?php echo ROOT_URL; ?>auth?page=login">Già Possiedi un account? Accedi</a>
+<div class="row">
+  <div class="columnAccediRegistrati"><a href="<?php echo ROOT_URL; ?>auth?page=login">ACCEDI</a></div>
+  <div class="columnRegistratiRegistrati"><a>REGISTRATI</a></div>
+</div>
+<br>
 
-<h1>Registrazione</h1>
-
-<form method="post" class="mb-4">
-  <h5 class="mb-3 mt-3">Informazioni personali</h5>
-  <div class="form-group">
-    <label for="nome">Nome</label>
-    <input name="nome" id="nome" type="text" class="form-control" value="<?php echo esc_html($nome); ?>">
-  </div>
-  <div class="form-group">
-    <label for="cognome">Cognome</label>
-    <input name="cognome" id="cognome" type="text" class="form-control" value="<?php echo esc_html($cognome); ?>">
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input name="email" id="email" type="text" class="form-control" value="<?php echo esc_html($email); ?>">
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input name="password" id="password" type="password" class="form-control" value="<?php echo esc_html($password); ?>">
-  </div>
-  <div class="form-group">
-    <label for="confirm_password">Conferma Password</label>
-    <input name="confirm_password" id="confirm_password" type="password" class="form-control" value="<?php echo esc_html($confirm_password); ?>">
-  </div>
-
-  <hr class=mb-4>
-
-  <h5  class="mb-3 mt-3">Indirizzo di spedizione</h5>
-  <div class="mb-3">
-    <label for="street">Via</label>
-    <input name="street" type="text" class="form-control"  id="street" value="<?php echo esc_html($street); ?>" >
-  </div>
-  <div class="row">
-    <div class="col-md-8 mb-3">
-      <label for="city">Città</label>
-      <input name="city" type="text" class="form-control"  id="city" value="<?php echo esc_html($city); ?>" >
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="cap">CAP</label>
-      <input name="cap" type="text" class="form-control"  id="cap" value="<?php echo esc_html($cap); ?>"  >
-    </div>
-  </div>
-
-  <input class="btn btn-primary right mt-3" type="submit" value="registrati" name="register">
-  
+<form method="post" class="form">
+        <div class="inputfield">
+          <label>NOME:</label>
+          <input name="nome" type="text" class="input" value="<?php echo esc_html($nome); ?>">
+       </div>  
+       <div class="inputfield">
+          <label>COGNOME:</label>
+          <input name="cognome" type="text" class="input" value="<?php echo esc_html($cognome); ?>">
+       </div>  
+       <div class="inputfield">
+          <label>EMAIL:</label>
+          <input name="email" type="text" class="input" value="<?php echo esc_html($email); ?>">
+       </div> 
+       <div class="inputfield">
+          <label>PASSWORD:</label>
+          <input name="password" type="password" class="input" value="<?php echo esc_html($password); ?>">
+       </div> 
+       <div class="inputfield">
+          <label>CONFERMA PASSWORD:</label>
+          <input name="confirm_password" type="password" class="input" value="<?php echo esc_html($confirm_password); ?>">
+       </div> 
+       <div class="inputfield">
+          <label>NOME ATTIVITA':</label>
+          <input name="nome_attività" type="text" class="input" value="<?php echo esc_html($nomeattivita); ?>">
+       </div> 
+       
+      <div class="inputfield">
+        <br>
+        <input type="submit" value="Registrati" class="btn" name="register">
+      </div>
 </form>
+</div>	
+
+<!--
+<div class="login-content">
+			<form action="index.html">
+				<img src="">
+
+  <h2 class="title">Registrati</h5>
+    <div class="input-div one">
+    <div class="i">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="div">
+        <h5>Nome</h5>
+        <input  type="text" class="input" value="<?php echo esc_html($nome); ?>">
+      </div>
+    </div>
+    <div class="input-div one">
+    <div class="i">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="div">
+        <h5>Cognome</h5>
+        <input  type="text" class="input" value="<?php echo esc_html($cognome); ?>">
+      </div>
+    </div>
+    <div class="input-div one">
+    <div class="i">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="div">
+        <h5>Email</h5>
+        <input  type="text" class="input" value="<?php echo esc_html($email); ?>">
+      </div>
+    </div>
+    <div class="input-div one">
+    <div class="i">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="div">
+        <h5>Password</h5>
+        <input  type="text" class="input" value="<?php echo esc_html($password); ?>">
+      </div>
+    </div>
+    <div class="input-div one">
+      <div class="i">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="div">
+        <h5>Conferma Password</h5>
+        <input  type="text" class="input"value="<?php echo esc_html($confirm_password); ?>">
+      </div>
+    </div>
+    <div class="input-div one">
+    <div class="i">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="div">
+        <h5>Nome Attività</h5>
+        <input  type="text" class="input" value="<?php echo esc_html($nomeattivita); ?>">
+      </div>
+    </div>
+
+    <input type="submit" class="btn" value="Registrati">
+
+    <a class="underline " href="<?php echo ROOT_URL; ?>auth?page=login">Già Possiedi un account? Accedi</a>
+  
+</form>-->
 

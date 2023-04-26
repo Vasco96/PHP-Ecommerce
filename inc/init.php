@@ -1,8 +1,8 @@
 <?php
 
-define('ROOT_URL', 'http://localhost/php-ecommerce/');
-define('ROOT_PATH', 'C:\\xampp\\htdocs\PHP-Ecommerce\\');
-define('SITE_NAME', 'PHP-Ecommerce');
+define('ROOT_URL', 'http://localhost/emmeemme/');
+define('ROOT_PATH', 'C:\\xampp\\htdocs\emmeemme\\');
+define('SITE_NAME', 'EmmeEmme');
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');

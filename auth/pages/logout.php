@@ -1,7 +1,7 @@
 <?php
 
 unset($_SESSION['user']);
-echo "<script>location.href='".ROOT_URL."auth/?page=login';</script>";
+echo "<script>location.href='".ROOT_URL."public/';</script>";
 exit;
 
 ?>

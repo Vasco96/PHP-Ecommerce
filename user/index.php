@@ -19,16 +19,8 @@ if(isset($_GET['page'])) {
   $page = $_GET['page'];
 }
 ?>
-<?php include ROOT_PATH . 'public/template-parts/header.php'; ?>
-<div class="container mt-5">
-  <div class="row">
-    <div class="col">
-      <div class="main">
-      <?php include "pages/$page.php"; ?>
-      <?php include ROOT_PATH . 'inc/alert-message.php'; ?>
-      </div>
-    </div>
-  </div>
+<?php include ROOT_PATH . 'user/template-parts/header.php'; ?>
 
-</div>
-<?php include ROOT_PATH . 'public/template-parts/footer.php'; ?>
+<?php include "pages/$page.php"; ?>
+
+<?php include ROOT_PATH . 'user/template-parts/footer.php'; ?>
